@@ -49,7 +49,7 @@ We encourage contributions from the community! To add new solutions or improve e
 
 - **Kayal Ennian A G**  
   LinkedIn: [Kayal Ennian A G](https://www.linkedin.com/in/kayal-ennian-a-g-80b515245/)  
-  Email: [your-email@example.com](mailto:kayalennian10@gmail.com)
+  Email: [kayalennian10](mailto:kayalennian10@gmail.com)
 
 ## 📜 License
 
