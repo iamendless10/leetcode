@@ -13,7 +13,6 @@ public:
                 return false;
             }
         }
-
         return stack.empty();        
     }
 };
