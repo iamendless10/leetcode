@@ -18,8 +18,6 @@ public:
             }
             st.push(num);  
         }
-        
-  
         while(!st.empty()) {
             res[st.top()] = -1;
             st.pop();
