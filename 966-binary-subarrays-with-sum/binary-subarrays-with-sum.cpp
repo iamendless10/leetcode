@@ -9,6 +9,7 @@ public:
     int function(vector<int> &nums, int goal){
 
         if (goal < 0) return 0;
+        
         else{
             int l = 0 , r= 0 , sumi = 0 , ans = 0;
             int n = nums.size();
