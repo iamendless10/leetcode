@@ -29,9 +29,9 @@ private:
     }
 
     bool isodd(int n) {
-        if ((n ^ 1) == (n + 1))
-            return false;
-        else
+        if (n & 1)
             return true;
+        else
+            return false;
     }
 };
