@@ -9,6 +9,8 @@ public:
         }
         maxsum = lsum;
         int rindex = n - 1;
+
+        
         for(int i = 0; i < k; i++){
             lsum-= nums[k - 1 - i];
             rsum += nums[n - 1 - i];
