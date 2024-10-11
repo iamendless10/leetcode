@@ -9,26 +9,27 @@ public:
         for (int i = 0; i < n; i++) {
             sum += nums[i];
 
-            // Updating shortest when sum is >= k
+            
             if (sum >= k) {
                 shortest = min(shortest, static_cast<long long>(i + 1));
             }
 
-            // Monotonic deque maintenance
+            // Monotonic deque 
             while (!dq.empty() && sum <= dq.back().first) {
                 dq.pop_back();
             }
-
             dq.push_back({sum, i});
 
-            // Check if removing elements from the front satisfies the condition
+
+
+            //removing elements from the front satisfies the condition
             pair<long long, int> curr = {LLONG_MIN, -1};
             while (!dq.empty() && sum - dq.front().first >= k) {
                 curr = dq.front();
                 dq.pop_front();
             }
 
-            // If a valid subarray is found, update the shortest length
+           
             if (curr.second != -1) {
                 shortest = min(shortest, static_cast<long long>(i - curr.second));
             }
