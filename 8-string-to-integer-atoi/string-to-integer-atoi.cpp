@@ -1,37 +1,39 @@
+#include <string>
+#include <climits>
+
+using namespace std;
+
 class Solution {
 public:
     int myAtoi(string s) {
-        int index = 0;
-        return cc(index, s, 0, 1, false);
+        int i = 0;
+        return cc(i, s, 0, false, 1);
     }
 
-    
 private:
-    int cc(int ind, const string& s, long res, int sign, bool started){
-        if (ind >= s.size()) return static_cast<int>(res * sign);
+    int cc(int ind, string s, int res, bool started, int sign) {
+        if (ind >= s.size()) return res * sign;
 
         char c = s[ind];
 
-        
-        if (!started && isspace(c)) {
-            return cc(ind + 1, s, res, sign, started);
+        if (!started && c == ' ') {
+            return cc(ind + 1, s, res, false, sign);
         }
-
 
         if (!started && (c == '-' || c == '+')) {
             sign = (c == '-') ? -1 : 1;
-            return cc(ind + 1, s, res, sign, true);
+            return cc(ind + 1, s, res, true, sign);
         }
-        
+
         if (isdigit(c)) {
+            if (res > (INT_MAX - (c - '0')) / 10) {
+                return (sign == 1) ? INT_MAX : INT_MIN;
+            }
+
             res = res * 10 + (c - '0');
-           
-            if (res * sign > INT_MAX) return INT_MAX;
-            if (res * sign < INT_MIN) return INT_MIN;
-            return cc(ind + 1, s, res, sign, true);
+            return cc(ind + 1, s, res, true, sign);
         }
 
-        return static_cast<int>(res * sign);
-
+        return res * sign;
     }
 };
