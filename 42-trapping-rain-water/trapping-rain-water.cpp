@@ -1,35 +1,26 @@
 class Solution {
 public:
-    int trap(vector<int>& nums) {
-        vector<int> l;
-        vector<int> r;
-
+    int trap(vector<int>& arr) {
+        int n = arr.size();
+        vector<int> r(n);
+        int maxr = 0;
         int maxl = 0;
-        for(int ele: nums){
-            maxl = max(maxl ,  ele);
-            l.push_back(maxl);
-        }
+        int total = 0;
         
 
+        if (n <= 2) return 0;
 
-        int maxr = 0;
-        int n  = nums.size(); 
-        for(int i = n - 1 ; i >= 0 ; i--){
-            maxr = max(nums[i] , maxr);
-            r.push_back(maxr);
+
+        for(int i = n - 1; i >= 0 ; i--){
+            maxr = max(maxr,arr[i]);
+            r[i] = maxr;
         }
-        reverse(r.begin(),r.end());
 
-        int sum = 0,pot = 0;
-        int ans = 0;
         for(int i = 0 ; i < n ; i++){
-            pot = min(l[i], r[i]);
-            ans = pot - nums[i];
-            if(ans > 0)sum += ans;
+            maxl = max(maxl,arr[i]);
+            total += min(maxl, r[i]) - arr[i];
         }
-
-
-        return sum;
+        return total;
     }
-    
+        
 };
