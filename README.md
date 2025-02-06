@@ -12,23 +12,6 @@ Dive into a curated collection of coding challenges sorted by difficulty and cat
 - **Medium**: Solutions for intermediate challenges. 🟡
 - **Hard**: Solutions for complex problems. 🔴
 
-## 📝 Problems Covered
-
-### Easy 🟢
-
-- [Two Sum](./Easy/two_sum.cpp): Find two numbers that add up to a target. 
-- [Reverse Linked List](./Easy/reverse_linked_list.cpp): Reverse a given linked list.
-
-### Medium 🟡
-
-- [Longest Substring Without Repeating Characters](./Medium/longest_substring_without_repeating_characters.cpp): Find the length of the longest substring with unique characters.
-- [Merge Intervals](./Medium/merge_intervals.cpp): Merge overlapping intervals in a list.
-
-### Hard 🔴
-
-- [Median of Two Sorted Arrays](./Hard/median_of_two_sorted_arrays.cpp): Find the median of two sorted arrays.
-- [Trapping Rain Water](./Hard/trapping_rain_water.cpp): Calculate the amount of trapped rainwater between bars.
-
 ## 🛠️ Technologies Utilized
 
 - **Programming Languages**: C++
