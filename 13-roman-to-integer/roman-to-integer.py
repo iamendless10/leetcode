@@ -14,10 +14,10 @@ class Solution:
         for i in reversed(s):
             if roman[i] < prev:
                 total -= roman[i]
-                prev = roman[i]
+                
             else:
                 total += roman[i]
-                prev = roman[i]
+            prev = roman[i]
         return total
 
         
